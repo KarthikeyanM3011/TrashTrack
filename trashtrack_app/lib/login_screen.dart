@@ -223,34 +223,31 @@ class _Log_InState extends State<Log_In> {
                                   builder: (context) {
                                     final screenHeight = MediaQuery.of(context).size.height;
                                     final halfScreenHeight = (screenHeight / 2)-100;
-                                    return Center(
-                                      child: Container(
-                                        height: halfScreenHeight,
-                                        child: AlertDialog(
-                                        title: Text('Forgot Password'),
-                                        content: Column(
-                                          children: [
-                                            txtfld(mail, "Enter Email"),
-                                                                  
-                                            ElevatedButton(
-                                              onPressed: ()async{
-                                                setState(() {
-                                                  _isLoading=!_isLoading;
-                                                });
-                                                reset(context,mail);
-                                                
-                                              },
-                                              child: Text('Send Mail',
-                                              style: TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                              )
-                                              ),
-                                          ],
-                                        ),
-                                         ),
+                                    return SingleChildScrollView(
+                                      child: AlertDialog(
+                                      title: Text('Forgot Password'),
+                                      content: Column(
+                                        children: [
+                                          txtfld(mail, "Enter Email"),
+                                                                
+                                          ElevatedButton(
+                                            onPressed: ()async{
+                                              setState(() {
+                                                _isLoading=!_isLoading;
+                                              });
+                                              reset(context,mail);
+                                              
+                                            },
+                                            child: Text('Send Mail',
+                                            style: TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                            )
+                                            ),
+                                        ],
                                       ),
+                                       ),
                                     );
                                   },
                                 );

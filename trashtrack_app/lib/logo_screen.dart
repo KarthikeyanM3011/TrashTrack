@@ -17,12 +17,12 @@ class _Logo_ScreenState extends State<Logo_Screen> {
 
   Future<void> navigatepage()async{
   User? user=FirebaseAuth.instance.currentUser;
-  await Future.delayed(Duration(seconds: 7));
+  await Future.delayed(Duration(seconds: 5));
   if(user==null){
     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>Log_In()));
   }
   else if(user!=null){
-    String usermail= user.email??'karthikeyan';
+    String usermail= user.email??'Unknown';
     print(usermail);
     final DocumentSnapshot documentSnapshot = await FirebaseFirestore.instance.collection("UserDetails").doc(usermail).get();
     print(documentSnapshot.data());
