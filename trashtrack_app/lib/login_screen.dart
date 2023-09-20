@@ -46,7 +46,7 @@ class _Log_InState extends State<Log_In> {
           print('$email-exists');
           print(documentSnapshot.exists);
         if(documentSnapshot.exists){
-          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomePage()));
+          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomePage(email: '$email',)));
         }
         else{
           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>DetailsPage()));

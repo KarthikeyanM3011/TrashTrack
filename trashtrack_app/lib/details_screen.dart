@@ -156,7 +156,7 @@ class _DetailsPageState extends State<DetailsPage> {
                               showsnackbar(context, 'Enter valid phone', 2);
                             }
                             else if(userdetails.adduser1(context)){
-                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomePage()));
+                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomePage(email: email,)));
                             }
                             else{
                               showsnackbar(context, 'Error Occurred.Try again later', 2);

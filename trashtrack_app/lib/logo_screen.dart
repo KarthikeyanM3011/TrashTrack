@@ -27,7 +27,7 @@ class _Logo_ScreenState extends State<Logo_Screen> {
     final DocumentSnapshot documentSnapshot = await FirebaseFirestore.instance.collection("UserDetails").doc(usermail).get();
     print(documentSnapshot.data());
     if(documentSnapshot.exists){
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomePage()));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomePage(email: usermail,)));
     }
     else{
       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>DetailsPage()));
